@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Quote Collection";
+}
+
+@model IQueryable<QuoteResponse>
+
+<div>
+    <h1>Quote Details</h1>
+</div>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Author</td>
+            <td>Quote</td>
+            <td>Date</td>
+            <td>Subject</td>
+            <td>Citation</td>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Author</td>
+                <td>@x.Quote</td>
+                <td>@x.Date</td>
+                <td>@x.Subject</td>
+                <td>@x.Citation</td>
+                @*<td><a asp-controller="Home" asp-action="Details" asp-route-applicationid="@x.QuoteId">Details</a></td>*@
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.QuoteId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.QuoteId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

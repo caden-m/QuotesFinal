@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "New Quote";
+}
+
+@model QuotesFinal.Models.QuoteResponse
+
+
+<h1>Add a New Quote</h1>
+<br />
+<div>
+    <form method="post">
+
+        <label asp-for="Author">Author:</label>
+        <input asp-for="Author" />
+        <br />
+
+        <label asp-for="Quote">Quote:</label>
+        <input asp-for="Quote" />
+        <br />
+
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" />
+        <br />
+
+        <label asp-for="Subject">Subject:</label>
+        <input asp-for="Subject"/>
+        <br />
+
+        <label asp-for="Citation">Citation:</label>
+        <input asp-for="Citation" />
+        <br />
+
+        <button type="submit">Submit Quote</button>
+
+        <div asp-validation-summary="All"></div>
+
+    </form>
+
+</div>
